@@ -18,7 +18,6 @@ type arrDomino [NMAX]domino
 type arrInt [NMAX]int
 
 func main() {
-	// KERJAKAN MANDIRI dan BOLEH BERTANYA KE ASISTEN PRAKTIKUM
 	var playerScore int = 0
 	var dealerScore int = 0
 	var boneyard, playerTiles, dealerTiles arrDomino
@@ -84,7 +83,6 @@ func main() {
 func getDecision(decision *int) {
 	/* I.S. decision telah siap pada piranti masukan
 	       F.S. decision berisi nilai "0", "1", "2", atau "9", di luar itu minta masukan kembali hingga valid*/
-	// KERJAKAN MANDIRI
 	var in int
 	fmt.Print("Decision? ")
 	fmt.Scan(&in)
@@ -110,7 +108,6 @@ func buatTile(T *arrDomino) {
 }
 func searchInt(T arrInt, n, x int) int {
 	/* mengembalikan posisi x pada array T yang berisi n bilangan bulat, -1 apabila tidak ditemukan */
-	// KERJAKAN MANDIRI
 	for i := 0; i < n; i++ {
 		if T[i] == x {
 			return i
@@ -121,7 +118,6 @@ func searchInt(T arrInt, n, x int) int {
 func acakTile(T *arrDomino, n int) {
 	/* I.S. terdefinisi array T berisi sejumlah n Tile domino
 	       F.S. array T tersusun acak */
-	// BOLEH DIBANTU ASISTEN PRAKTIKUM
 	fmt.Println("Dealing ...")
 	var temp arrInt
 	var temp2 arrDomino = *T
@@ -145,7 +141,6 @@ func bagiTile(T, p *arrDomino, n *int) {
 	/* I.S. terdefinisi array T yang berisi sejumlah n Tile domino
 	       F.S. pemain p memperoleh 2 Tile terakhir dari T, nilai n berkurang
 	       catatan: ambil Tile sejumlah m yang terakhir dari T, nilai n berkurang*/
-	// KERJAKAN MANDIRI
 	p[0] = T[*n-1]
 	p[1] = T[*n-2]
 	//T[*n-1]=0
@@ -155,7 +150,6 @@ func bagiTile(T, p *arrDomino, n *int) {
 func replaceTile(T, p *arrDomino, n *int, posisi int) {
 	/* I.S. terdefinisi array T yang berisi sejumlah n Tile domino, dan array p yang berisi sejumlah Tile pemain
 	       F.S. mengambil satu Tile dari T dan mengganti sesuai nomor posisi Tile pada array p*/
-	// KERJAKAN MANDIRI
 	var temp domino
 	temp = T[*n]
 	//T[*n]= p[posisi]
@@ -164,23 +158,19 @@ func replaceTile(T, p *arrDomino, n *int, posisi int) {
 }
 func haveBalak(p domino) bool {
 	/* Mengembalikan true apabila p adalah balak, false untuk kondisi sebaliknya */
-	// KERJAKAN MANDIRI
 	return p.left == p.right
 }
 func tilePoin(p domino) int {
 	/* Mengembalikan total poin sisi left dan right dari p*/
-	// KERJAKAN MANDIRI
 	return p.left + p.right
 }
 func haveTwoBalak(p arrDomino) bool {
 	/* Mengembalikan true apabila pemain p memiliki 2 Tile balak. */
-	// KERJAKAN MANDIRI
 	return haveBalak(p[0]) && haveBalak(p[1])
 }
 func menang(p1, p2 arrDomino, p1Skor, p2Skor *int) {
 	/* I.S. terdefinisi 2 Tile yang masing-masing dimiliki oleh pemain p1 dan p2
 	   F.S. p1Skor bernilai 1 dan p2Skor bernilai 0 apabila p1 menang, atau p1Skor bernilai 0 dan p2Skor bernilai 1 apabila p2 menang */
-	// KERJAKAN MANDIRI dan BOLEH BERTANYA KE ASISTEN PRAKTIKUM
 	var poin1, poin2 int
 	*p1Skor = 0
 	*p2Skor = 0
